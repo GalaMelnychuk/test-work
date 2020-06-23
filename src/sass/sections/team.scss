@@ -1,0 +1,154 @@
+.section-team {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__title {
+    @extend %title;
+    color: $secondory-text-color;
+    font-size: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: $secondory-hover-color;
+      width: 60px;
+      height: 3px;
+      margin: 0 auto;
+      margin-top: 42px;
+      margin-bottom: 66px;
+    }
+  }
+
+  &__heading {
+    @extend %heading;
+    font-size: 30px;
+    margin-top: 22px;
+  }
+
+  &__desc {
+    width: 988px;
+    color: $desc-color;
+    font-family: $desc-font;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 88px;
+    line-height: 24px;
+  }
+}
+
+.team {
+  &__member {
+    margin-top: 28px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &__item--img {
+    transition: 200ms linear;
+  }
+
+  &__member-name {
+    margin-bottom: 14px;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $secondory-text-color;
+
+  }
+
+  &__member-position {
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 300;
+    color: $desc-color;
+    font-style: italic;
+  }
+}
+
+.item-overlay {
+  position: relative;
+  transition: 200ms linear;
+}
+
+.overlay-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top,
+      rgba(252, 227, 138, 0.9),
+      rgba(243, 129, 129, 0.9));
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 200ms linear,
+    box-shadow 200ms linear,
+    visibility 200ms linear;
+}
+
+.social {
+
+  &__list {
+    width: 226px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    text-decoration: none;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 56px;
+    text-align: center;
+    background-color: $hover-color;
+    background-position: center;
+    transition: background-color 200ms linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $secondory-hover-color;
+    }
+
+    &:hover .social__icon {
+      fill: $prime-text-color;
+    }
+
+    &:hover .overlay-social {
+      visibility: visible;
+      box-shadow: 10px 10px 0 0 $secondory-bg-color;
+      transform: translate(-10px, -10px);
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 26px;
+    height: 26px;
+    fill: $secondory-hover-color;
+
+  }
+}
+
+.team__item {
+  &:hover .overlay-social {
+    visibility: visible;
+    box-shadow: 10px 10px 0 0 $secondory-bg-color;
+    transform: translate(-10px, -10px);
+    opacity: 1;
+  }
+
+  &:hover .team__item-img {
+    transform: translate(-10px, -10px);
+  }
+
+}
